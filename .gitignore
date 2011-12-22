@@ -1,0 +1,16 @@
+*.[oa]
+*.d
+*.dll
+*.exe
+*.lib
+*.map
+*.obj
+*.pyc
+*.so
+*.tap
+*~
+/html/
+cscope.out
+tags
+README.html
+*.zip
