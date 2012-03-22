@@ -13,7 +13,7 @@ This fixes the following problems in the TMS PVR:
    the cursor up or down the display.
 
 To install the TAP, upload it to the `ProgramFiles/AutoStart` folder on
-the PVR using ftp. There is no configuration or user interaction
+your PVR using ftp. There is no configuration or user interaction
 required for this tap. It merely runs in the background and fixes these
 issues. Ensure you delete the FixCurrent tap if you had it previously
 installed, as this tap replaces it.
@@ -22,17 +22,18 @@ Get the latest built TAP at
 <http://markb.dreamhosters.com/EPGPurge/EPGPurge.zip>. See/get the
 source code at <http://github.com/bulletmark/EPGPurge>. I developed this
 on my Australian TF7100HDPlus model PVR but it should work on at least
-the other Australian TMS models, i.e. TRF-2400, TRF-2460, TRF7170, and
+all other Australian TMS models, i.e. TRF-2400, TRF-2460, TRF7170, and
 TRF7160. I have tested the app using both ICE and FTA EPG data.
 
 ## Author
 
-Mark Blakeney, <http://github.com/bulletmark>. I am user "markb" on the
-Topfield Australia forums at <http://www.itopfield.com.au/forum/>.
+Mark Blakeney, <mailto:markb@berlios.de>. I am user "markb" on the
+[Topfield Australia forums](http://www.itopfield.com.au/forum/).
+See my other TAPs [here](http://markb.dreamhosters.com/web/).
 
 ## License
 
-Copyright (C) 2010 Mark Blakeney. This program is distributed under the
+Copyright (C) 2012 Mark Blakeney. This program is distributed under the
 terms of the GNU General Public License.
 
 This program is free software: you can redistribute it and/or modify it
@@ -77,7 +78,7 @@ enhancements:
    against current date+time and since the MJDHM format embeds the date
    and time in significant digit order that means we can compare them
    directly and thus save significant CPU overhead avoiding the time
-   calculations.
+   conversions.
 
 3. Runs just after each minute boundary to purge and adjust the EPG.
    Since the TAP is now much more efficient (running typically only
