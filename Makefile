@@ -27,7 +27,7 @@ TSITE = dreamhost:site.personal/$(APP)/
 #### Edit ABOVE values appropriately for your project
 
 XPATH = ${XTOOLS}/bin
-JB = ${FBLIB}/JailBreak
+JB = ${FBLIB}/devutils/JailBreak
 OBJS = ${SRCS:=.o}
 DOCOBJ = ${DOC:.md=.html}
 ZIPDIR = $(APP)
