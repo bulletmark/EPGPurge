@@ -63,8 +63,8 @@ v1.1-MGB: Imported to github and added the following:
 4. Fixed end time range bug. Programs start on the start time and end
    just before the end time, i.e. range = [start, end).
 
-V2.0: Rewrote and renamed my version EPGPurge to add the following
-enhancements:
+V2.0 - 2011-12-22: Rewrote and renamed my version EPGPurge to add the
+following enhancements:
 
 1. Deletes old EPG entries rather than marks them as expired. There is
    no need for old EPG data anyhow and deleting them subsequently makes
@@ -85,5 +85,7 @@ enhancements:
    2 iterations per channel as per above comment) we can run it each
    minute and catch all "edge" conditions where EPG data is otherwise
    sometimes seen to be out of date.
+
+V2.1 - 2012-04-13: Add check for no EPG data.
 
 <!-- vim: se ai syn=markdown: -->

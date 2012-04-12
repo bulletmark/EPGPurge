@@ -15,6 +15,11 @@ static void updateChannelEPG(dword now, int chan)
 {
     int num_events;
     TYPE_TapEvent *epg = TAP_GetEvent(SVC_TYPE_Tv, chan, &num_events);
+
+    // Ensure we got the data
+    if (!epg)
+	return;
+
     TYPE_TapEvent *event = epg;
     TYPE_TapEvent *event_end = &epg[num_events];
     TYPE_TapEvent *prev = NULL;
@@ -83,14 +88,11 @@ dword TAP_EventHandler(word event, dword param1, dword /*param2*/)
     int type, chan;
     TAP_Channel_GetCurrent(&type, &chan);
 
-    // Get current date+time
-    dword now = getCurrentTime();
-
     // Force update single new channel if channel change or return from
     // playback
     if (last_chan != chan || (event == EVT_RBACK && param1 == 1)) {
 	last_chan = chan;
-	updateChannelEPG(now, chan);
+	updateChannelEPG(getCurrentTime(), chan);
 	return param1;
     }
 
@@ -113,6 +115,9 @@ dword TAP_EventHandler(word event, dword param1, dword /*param2*/)
 
 	last = 0;
     }
+
+    // Get current date+time
+    dword now = getCurrentTime();
 
     // Update EPG at every minute boundary or if forced by key
     if (last != now) {
