@@ -4,10 +4,11 @@ A small TAP program to purge old EPG entries on a Topfield TMS PVR.
 
 This fixes the following problems in the TMS PVR:
 
-1. After each minute boundary, and any key is pressed that displays EPG
-   data, the tap purges the EPG of all program entries older than the
-   current + previous program on each channel and also ensures the
-   current program is updated to match the current time of day.
+1. After each minute boundary, the tap purges the EPG of all program
+   entries older than the current + previous program on each channel and
+   also ensures the current program is updated to match the current time
+   of day. This stops old program info being displayed on the info
+   display, and old program info being stored in recordings.
 
 2. Stops the guide display from jumping back a large period as you move
    the cursor up or down the display.
@@ -87,5 +88,10 @@ following enhancements:
    sometimes seen to be out of date.
 
 V2.1 - 2012-04-13: Add check for no EPG data.
+
+V2.2 - 2012-04-29: Always runs after each minute boundary now.
+  Runs in all modes, to always ensure that the EPG is updated. Apart from the
+  other problems addressed before this version, this should also
+  now ensure that recordings capture the correct program info data.
 
 <!-- vim: se ai syn=markdown: -->
