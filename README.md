@@ -54,7 +54,7 @@ victorhi hosted at <http://sourceforge.net/projects/topfieldtapmisc/>.
 
 v1.1-MGB: Imported to github and added the following:
 
-1. Also forces EPG update after returning from playback or timeslip to
+1. Also forces EPG purge after returning from playback or timeslip to
    realtime TV.
 
 2. Made code slightly more efficient and made some minor cleanups.
@@ -93,5 +93,9 @@ V2.2 - 2012-04-29: Always runs after each minute boundary now.
   Runs in all modes, to always ensure that the EPG is updated. Apart from the
   other problems addressed before this version, this should also
   now ensure that recordings capture the correct program info data.
+
+v2.2.1 - 2012-06-20: Only do EPG purge on IDLE and KEY events.
+  I do not know of any problems before this but FireBird recommends
+  avoiding processing on the other TAP events so may as well be sure.
 
 <!-- vim: se ai syn=markdown: -->

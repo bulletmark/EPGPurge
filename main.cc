@@ -33,15 +33,7 @@ static void updateAllEPG(dword now)
 
 	// For each program on this channel ..
 	for (; event < event_end; event++) {
-	    if (event->endTime <= now) {
-
-		// Delete any program older than current and previous
-		if (prev)
-		    TAP_EPG_DeleteEvent(SVC_TYPE_Tv, chan, prev->evtId);
-
-		prev = event;
-	    }
-	    else {
+	    if (event->endTime > now) {
 
 		// Update the previous program if still marked as current
 		if (prev && prev->runningStatus != 1)
@@ -54,6 +46,12 @@ static void updateAllEPG(dword now)
 		// No need to process future events for this channel
 		break;
 	    }
+
+	    // Delete any program older than current and previous
+	    if (prev)
+		TAP_EPG_DeleteEvent(SVC_TYPE_Tv, chan, prev->evtId);
+
+	    prev = event;
 	}
 
 	TAP_MemFree(epg);
@@ -61,14 +59,18 @@ static void updateAllEPG(dword now)
 }
 
 // TMS TAP event handler
-dword TAP_EventHandler(word /*event*/, dword param1, dword /*param2*/)
+dword TAP_EventHandler(word event, dword param1, dword /*param2*/)
 {
     static dword last;
+
+    // Only action idle and key events
+    if (event != EVT_IDLE && event != EVT_KEY)
+	return param1;
 
     // Get current date+time
     dword now = getCurrentTime();
 
-    // Update EPG at every minute boundary
+    // Update EPG at system startup and then every minute boundary
     if (last != now) {
 	updateAllEPG(now);
 	last = now;
