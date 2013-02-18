@@ -98,4 +98,6 @@ v2.2.1 - 2012-06-20: Only do EPG purge on IDLE and KEY events.
   I do not know of any problems before this but FireBird recommends
   avoiding processing on the other TAP events so may as well be sure.
 
+v2.3 - 2013-02-18: Added TAP_ID() to appear in TMSCommander tap list.
+
 <!-- vim: se ai syn=markdown: -->

@@ -10,7 +10,7 @@ SRCS = main id
 DOC = README.md
 
 # C include file defining version number
-VERSION = version.h
+VERSION = id.h
 
 # Path to TMS TAP API LIB
 TAPLIB = ../../tapapi

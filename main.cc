@@ -1,5 +1,4 @@
 #include <tap.h>
-#include "version.h"
 
 // Return the current time in MJDHM format
 static dword getCurrentTime(void)
