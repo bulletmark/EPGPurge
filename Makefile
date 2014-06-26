@@ -22,7 +22,7 @@ XTOOLS = ../../xtools
 FBLIB  = ../../FireBirdLib
 
 # Target site where the zip and README file are sited
-TSITE = dreamhost:site.personal/$(APP)/
+TSITE = bullet:/usr/share/nginx/markb/taps/$(APP)/
 
 #### Edit ABOVE values appropriately for your project
 
@@ -38,7 +38,7 @@ include ${TAPLIB}/include/tool.mk
 TAP_FLAGS += -fPIC
 
 ifeq (${DEBUG},y)
-TAP_FLAGS += -g -DDEBUG 
+TAP_FLAGS += -g -DDEBUG
 endif
 
 #compile options

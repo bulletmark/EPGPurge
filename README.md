@@ -14,13 +14,14 @@ This fixes the following problems in the TMS PVR:
    the cursor up or down the display.
 
 To install the TAP, upload it to the `ProgramFiles/AutoStart` folder on
-your PVR using ftp. There is no configuration or user interaction
-required for this tap. It merely runs in the background and fixes these
-issues. Ensure you delete the FixCurrent tap if you had it previously
-installed, as this tap replaces it.
+your PVR using ftp, or copy it via a USB flash stick. There is no
+configuration or user interaction required for this tap. It merely runs
+in the background and fixes these issues. Ensure you delete the
+FixCurrent tap if you had it previously installed, as this tap replaces
+it.
 
 Get the latest built TAP at
-<http://markb.dreamhosters.com/EPGPurge/EPGPurge.zip>. See/get the
+<http://markb.bullet-systems.net/taps/EPGPurge/EPGPurge.zip>. See/get the
 source code at <http://github.com/bulletmark/EPGPurge>. I developed this
 on my Australian TF7100HDPlus model PVR but it should work on at least
 all other Australian TMS models, i.e. TRF-2400, TRF-2460, TRF7170, and
@@ -28,9 +29,10 @@ TRF7160. I have tested the app using both ICE and FTA EPG data.
 
 ## Author
 
-Mark Blakeney, <mailto:markb@berlios.de>. I am user "markb" on the
-[Topfield Australia forums](http://www.itopfield.com.au/forum/).
-See my other TAPs [here](http://markb.dreamhosters.com/web/).
+Mark Blakeney, <mailto:markb@berlios.de>. I am user
+[_bulletmark_](http://topfield.forumchitchat.com/profile/4294063) on the
+[Topfield Australia forums](http://topfield.forumchitchat.com/).
+See my other TAPs [here](http://markb.bullet-systems.net/).
 
 ## License
 
@@ -98,6 +100,6 @@ v2.2.1 - 2012-06-20: Only do EPG purge on IDLE and KEY events.
   I do not know of any problems before this but FireBird recommends
   avoiding processing on the other TAP events so may as well be sure.
 
-v2.3 - 2013-02-18: Added TAP_ID() to appear in TMSCommander tap list.
+v2.3 - 2013-02-18: Added TAP_ID function to appear in TMSCommander tap list.
 
 <!-- vim: se ai syn=markdown: -->
