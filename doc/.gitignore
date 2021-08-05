@@ -1,0 +1,4 @@
+*.pdf
+*.pdfmarks
+*.html
+.asciidoctor

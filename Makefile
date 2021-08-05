@@ -7,7 +7,7 @@ APP = EPGPurge
 SRCS = main id
 
 # Documentation source file (in markdown plain-text format)
-DOC = README.md
+DOC = doc/README.asc
 
 # C include file defining version number
 VERSION = id.h
@@ -29,7 +29,7 @@ TSITE = bullet:/usr/share/nginx/markb/taps/$(APP)/
 XPATH = ${XTOOLS}/bin
 JB = ${FBLIB}/devutils/JailBreak
 OBJS = ${SRCS:=.o}
-DOCOBJ = ${DOC:.md=.html}
+DOCOBJ = ${DOC:.asc=.html}
 ZIPDIR = $(APP)
 
 # include default settings
@@ -60,7 +60,7 @@ TAP_LIBS = ${FBLIB}/libFireBird.a ${TAPLIB}/tapinit.o ${TAPLIB}/libtap.so -lc -l
 TAP_APP = $(APP).tap
 TAP_MAP = $(APP).map
 
-ALL = $(TAP_APP) $(DOCOBJ)
+ALL = $(TAP_APP)
 
 all: $(ALL)
 
@@ -68,9 +68,6 @@ $(TAP_APP): ${TAP_OBJS}
 	@echo "[Linking .. $@]"
 	$(Q_)${XPATH}/$(LD) -shared --no-undefined --allow-shlib-undefined -o $@ ${TAP_OBJS} $(TAP_LIBS) -Map ${TAP_MAP}
 	$(Q_)${JB} $@
-
-$(DOCOBJ): $(DOC)
-	markdown $< >$@
 
 # Implicit rule for building local apps
 %.o : %.c
@@ -99,12 +96,12 @@ $(ZIPFILE): $(ALL)
 	rm -rf $(ZIPNAME)
 	ln -sf $(ZIPFILE) $(ZIPLINK)
 
-site:	zip $(DOCOBJ)
+deploy:	zip $(DOCOBJ)
 	rsync -av $(ZIPFILE) $(ZIPLINK) $(DOCOBJ) $(TSITE)
 
 clean:
 	@echo "[Cleaning all .. ]"
-	$(Q_)-${RM} -rf $(TAP_APP) $(TAP_MAP) *.d *.o $(DOCOBJ) $(ZIPDIR)-*/ $(APP)-*.zip $(ZIPLINK)
+	$(Q_)-${RM} -rf $(TAP_APP) $(TAP_MAP) *.d *.o $(ZIPDIR)-*/ $(APP)-*.zip $(ZIPLINK)
 
 # Dependency file checking (created with gcc -M command)
 -include *.d
