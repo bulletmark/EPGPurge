@@ -13,7 +13,7 @@ TOC = 3
 
 tmp = .tmp.html
 
-%.html: %.asc Makefile
+%.html: %.adoc Makefile
 	asciidoctor -a icons=font -a data-uri -a numbered \
 		-r $(extdir)/google-analytics-docinfoprocessor.rb \
 		-a google-analytics-account=UA-23551033-2 \
@@ -28,7 +28,7 @@ deploy:
 	rsync -avc $(html) $(site)
 
 serve:
-	live-server-command $(src).asc make $(html)
+	live-server-command $(src).adoc make $(html)
 
 clean:
 	rm -f $(html) *.xml *.png *.cache $(tmp)
