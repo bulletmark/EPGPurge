@@ -1,7 +1,6 @@
-= EPGPurge
-:toc: true
+# EPGPurge TAP
 
-== Introduction
+## Introduction
 
 This is a small TAP program to purge old EPG entries on a Topfield TMS PVR.
 
@@ -23,20 +22,21 @@ in the background and fixes these issues. Ensure you delete the
 FixCurrent tap if you had it previously installed, as this tap replaces
 it.
 
-Get the latest built TAP at
-http://markb.bullet-systems.net/taps/EPGPurge/EPGPurge.zip. See/get the
-source code at http://github.com/bulletmark/EPGPurge. I developed this
-on my Australian TF7100HDPlus model PVR but it should work on at least
-all other Australian TMS models, i.e. TRF-2400, TRF-2460, TRF7170, and
+I developed this on my Australian TF7100HDPlus model PVR but it should work on
+at least all other Australian TMS models, i.e. TRF-2400, TRF-2460, TRF7170, and
 TRF7160. I have tested the app using both ICE and FTA EPG data.
 
-== Author
+Get the latest built TAP from
+[here](https://markb.bullet-systems.net/taps/EPGPurge/EPGPurge.zip). View the
+source code on [github](https://github.com/bulletmark/EPGPurge).
 
-I am user https://topfield.forumchitchat.com/profile/4294063[bulletmark]
-on the https://topfield.forumchitchat.com/[Topfield Australia forums].
-See my other TAPs http://markb.bullet-systems.net/[here].
+## Author
 
-== License
+- User [bulletmark](https://github.com/bulletmark) on [github](https://github.com/).
+- User [bulletmark](https://topfield.forumchitchat.com/profile/4294063)
+  on the [Topfield Australia Forums](https://topfield.forumchitchat.com).
+
+## License
 
 Copyright (C) 2012 Mark Blakeney. This program is distributed under the
 terms of the GNU General Public License.
@@ -48,15 +48,19 @@ version.
 
 This program is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
-Public License at http://www.gnu.org/licenses/ for more details.
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [GNU General
+Public License](https://www.gnu.org/licenses/) for more details.
 
-== Change History
+## Change History
 
-v1.0:: Original version for guide display. This original version by
-victorhi hosted at http://sourceforge.net/projects/topfieldtapmisc/.
+**v1.0:**
 
-v1.1-MGB:: Imported to github and added the following:
+Original version for guide display, based on [this
+tap](https://sourceforge.net/projects/topfieldtapmisc/).
+
+**v1.1-MGB:**
+
+Imported to github and added the following:
 
 1. Also forces EPG purge after returning from playback or timeslip to
    realtime TV.
@@ -68,7 +72,9 @@ v1.1-MGB:: Imported to github and added the following:
 4. Fixed end time range bug. Programs start on the start time and end
    just before the end time, i.e. range = [start, end).
 
-V2.0 - 2011-12-22:: Rewrote and renamed my version EPGPurge to add the
+**V2.0 - 2011-12-22:**
+
+Rewrote and renamed my version EPGPurge to add the
 following enhancements:
 
 1. Deletes old EPG entries rather than marks them as expired. There is
@@ -91,17 +97,23 @@ following enhancements:
    minute and catch all "edge" conditions where EPG data is otherwise
    sometimes seen to be out of date.
 
-V2.1 - 2012-04-13:: Add check for no EPG data.
+**V2.1 - 2012-04-13:**
 
-V2.2 - 2012-04-29:: Always runs after each minute boundary now.
-  Runs in all modes, to always ensure that the EPG is updated. Apart from the
-  other problems addressed before this version, this should also
-  now ensure that recordings capture the correct program info data.
+Add check for no EPG data.
 
-v2.2.1 - 2012-06-20:: Only do EPG purge on IDLE and KEY events.
-  I do not know of any problems before this but FireBird recommends
-  avoiding processing on the other TAP events so may as well be sure.
+**V2.2 - 2012-04-29:**
 
-v2.3 - 2013-02-18:: Added TAP_ID function to appear in TMSCommander tap list.
+ Always runs after each minute boundary now.  Runs in all modes, to always
+ ensure that the EPG is updated. Apart from the other problems addressed before
+ this version, this should also now ensure that recordings capture the correct
+ program info data.
 
-// vim: se et ai sw=4 ts=4 syn=asciidoc:
+**v2.2.1 - 2012-06-20:**
+
+Only do EPG purge on IDLE and KEY events.  I do not know of any problems before
+this but FireBird recommends avoiding processing on the other TAP events so may
+as well be sure.
+
+**v2.3 - 2013-02-18:**
+
+Added TAPID function to appear in TMSCommander tap list.

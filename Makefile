@@ -7,7 +7,8 @@ APP = EPGPurge
 SRCS = main id
 
 # Documentation source file (in markdown plain-text format)
-DOC = doc/README.asc
+# COPY FROM ~/Data/website/vuepress/markb/epgpurge.md
+DOC = README.md
 
 # C include file defining version number
 VERSION = id.h
@@ -29,7 +30,6 @@ TSITE = bullet:/usr/share/nginx/markb/taps/$(APP)/
 XPATH = ${XTOOLS}/bin
 JB = ${FBLIB}/devutils/JailBreak
 OBJS = ${SRCS:=.o}
-DOCOBJ = ${DOC:.asc=.html}
 ZIPDIR = $(APP)
 
 # include default settings
@@ -91,13 +91,13 @@ zip:	$(ZIPFILE)
 $(ZIPFILE): $(ALL)
 	rm -rf $(ZIPNAME)
 	mkdir $(ZIPNAME)
-	cp -p $(TAP_APP) $(DOC) $(DOCOBJ) $(ZIPNAME)
+	cp -p $(TAP_APP) $(DOC) $(ZIPNAME)
 	zip -r $(ZIPFILE) $(ZIPNAME)
 	rm -rf $(ZIPNAME)
 	ln -sf $(ZIPFILE) $(ZIPLINK)
 
-deploy:	zip $(DOCOBJ)
-	rsync -av $(ZIPFILE) $(ZIPLINK) $(DOCOBJ) $(TSITE)
+deploy:	zip
+	rsync -av $(ZIPFILE) $(ZIPLINK) $(TSITE)
 
 clean:
 	@echo "[Cleaning all .. ]"
