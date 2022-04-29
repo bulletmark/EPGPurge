@@ -7,7 +7,6 @@ APP = EPGPurge
 SRCS = main id
 
 # Documentation source file (in markdown plain-text format)
-# COPY FROM ~/Data/website/vuepress/markb/epgpurge.md
 DOC = README.md
 
 # C include file defining version number
