@@ -27,9 +27,9 @@ at least all other Australian TMS models, i.e. TRF-2400, TRF-2460, TRF7170, and
 TRF7160. I have tested the app using both ICE and FTA EPG data.
 
 Read the [latest
-documentation](https://markb.bullet-systems.net/epgpurge.html) or
-download the [latest built
-TAP](https://markb.bullet-systems.net/taps/EPGPurge/EPGPurge.zip).
+documentation](https://markb.bullet-systems.net/epgpurge.html), [source
+code](https://github.com/bulletmark/EPGPurge), or download the [latest
+built TAP](https://markb.bullet-systems.net/taps/EPGPurge/EPGPurge.zip).
 
 ## Author
 
