@@ -33,9 +33,9 @@ TAP](https://markb.bullet-systems.net/taps/EPGPurge/EPGPurge.zip).
 
 ## Author
 
+- User [bulletmark](https://oztoppy.forumchitchat.com/profile/4648279)
+  on the [oztoppy Australia Forum](https://oztoppy.forumchitchat.com).
 - User [bulletmark](https://github.com/bulletmark) on [github](https://github.com/).
-- User [bulletmark](https://topfield.forumchitchat.com/profile/4294063)
-  on the [Topfield Australia Forums](https://topfield.forumchitchat.com).
 
 ## License
 
