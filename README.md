@@ -26,9 +26,10 @@ I developed this on my Australian TF7100HDPlus model PVR but it should work on
 at least all other Australian TMS models, i.e. TRF-2400, TRF-2460, TRF7170, and
 TRF7160. I have tested the app using both ICE and FTA EPG data.
 
-Get the latest built TAP from
-[here](https://markb.bullet-systems.net/taps/EPGPurge/EPGPurge.zip). View the
-source code on [github](https://github.com/bulletmark/EPGPurge).
+Read the [latest
+documentation](https://markb.bullet-systems.net/epgpurge.html) or
+download the [latest built
+TAP](https://markb.bullet-systems.net/taps/EPGPurge/EPGPurge.zip).
 
 ## Author
 
